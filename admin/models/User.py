@@ -12,7 +12,7 @@ class User(models.Model):
     nickname = models.CharField(max_length=64, null=True)
     mobile = models.CharField(max_length=16, null=True)
     email = models.CharField(max_length=128, null=True)
-    status = models.CharField(max_length=10, null=True, default='NEW')
+    status = models.CharField(max_length=10, default='NEW')
     device_id = models.CharField(max_length=128, null=True)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
