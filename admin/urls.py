@@ -8,4 +8,5 @@ urlpatterns = [
     path('users/add', users.add, name='users.add'),
     path('users/update', users.update, name='users.update'),
     path('weather7d/<str:code>', weather.weather7d, name='weather7d'),
+    path('weather/<str:code>', weather.weather, name='weather'),
 ]
