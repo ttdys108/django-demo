@@ -1,5 +1,5 @@
-from .redis_utils import Redis
+from .redis_utils import redisTemplate
 
 __all__ = [
-    'Redis',
+    redisTemplate,
 ]

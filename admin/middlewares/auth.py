@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseForbidden
 from django.core.cache import cache
 import re
-from ..utils import Redis
+from ..utils import redisTemplate as redis
 import string
 import json
 
@@ -21,7 +21,7 @@ class AuthMiddleware:
             print('token is required for request: ', request.path)
             return HttpResponse(status=401)
         # validate token
-        auth = Redis.get('_token:' + token)
+        auth = redis.get('_token:' + token)
         if not auth:
             print('token: ', token, ' has expired!')
             return HttpResponse(status=401)
